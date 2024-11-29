@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const postRoutes = require("./routes/postRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -21,5 +22,6 @@ mongoose
 
 // Routes
 app.use("/posts", postRoutes);
+app.use("/comments", commentRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
